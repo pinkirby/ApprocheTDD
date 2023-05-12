@@ -10,9 +10,6 @@ public class UsersController : ControllerBase
     private readonly ILogger<UsersController> _logger;
     private readonly IUsersService _usersService; 
 
-    public UsersController() {
-    }
-
     public UsersController(IUsersService usersService)
     {
         _usersService = usersService;
@@ -22,6 +19,8 @@ public class UsersController : ControllerBase
     public async Task<IActionResult> Get()
     {
         var users = await _usersService.GetAllUsers();
-        return Ok(users);
+        if (users.Any())
+            return Ok(users);
+        return NotFound();
     }
 }
