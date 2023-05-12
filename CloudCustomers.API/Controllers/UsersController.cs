@@ -7,7 +7,6 @@ namespace CloudCustomers.API.Controllers;
 [Route("[controller]")]
 public class UsersController : ControllerBase
 {
-    private readonly ILogger<UsersController> _logger;
     private readonly IUsersService _usersService; 
 
     public UsersController(IUsersService usersService)
