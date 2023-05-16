@@ -9,7 +9,7 @@ using Microsoft.Extensions.Options;
 namespace CloudCustomers.API.Services
 {
     public interface IUsersService {
-        public Task<List<User>> GetAllUsers();
+        Task<List<User>> GetAllUsers();
     }
 
     public class UsersService : IUsersService
